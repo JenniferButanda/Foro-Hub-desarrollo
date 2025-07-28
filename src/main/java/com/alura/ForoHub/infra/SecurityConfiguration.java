@@ -1,6 +1,5 @@
 package com.alura.ForoHub.infra;
 
-import com.alura.ForoHub.domain.usuario.AutenticacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

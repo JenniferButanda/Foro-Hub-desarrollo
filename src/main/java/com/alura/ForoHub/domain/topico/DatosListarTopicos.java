@@ -1,7 +1,5 @@
 package com.alura.ForoHub.domain.topico;
 
-import com.alura.ForoHub.domain.usuario.Usuario;
-
 import java.time.LocalDateTime;
 
 public record DatosListarTopicos(

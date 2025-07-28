@@ -4,7 +4,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class GenerandoContrasena {
     public static void main(String[] args) {
-        String passwordEnTextoPlano = "123456"; // <-- aquí escribes tu nueva contraseña
+        String passwordEnTextoPlano = "123456";
         String passwordEncriptada = new BCryptPasswordEncoder().encode(passwordEnTextoPlano);
 
         System.out.println("Contraseña en texto plano: " + passwordEnTextoPlano);

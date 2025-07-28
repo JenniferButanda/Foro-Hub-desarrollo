@@ -24,12 +24,35 @@ public class Topico {
     private String mensaje;
     private LocalDateTime fechaDeCreacion = LocalDateTime.now();
 
-    @Enumerated(EnumType.STRING)
-    private StatusTopico status = StatusTopico.ABIERTO;
+    private Boolean status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "autor_id")
+    @JoinColumn(name = "usuario_id")
     private Usuario autor;
 
     private String curso;
+
+    public Topico(DatosRegistroTopico datos, Usuario usuario) {
+        this.titulo = datos.titulo();
+        this.mensaje = datos.mensaje();
+        this.autor = usuario;
+        this.curso = datos.curso();
+        this.status = true;
+    }
+
+    public void actualizarTopico(DatosActualizacionTopico datos) {
+        if (datos.titulo() != null && !datos.titulo().isBlank()) {
+            this.titulo = datos.titulo();
+        }
+        if (datos.mensaje() != null && !datos.mensaje().isBlank()) {
+            this.mensaje = datos.mensaje();
+        }
+        if (datos.curso() != null && !datos.curso().isBlank()) {
+            this.curso = datos.curso();
+        }
+    }
+
+    public void eliminar() {
+        this.status = false;
+    }
 }

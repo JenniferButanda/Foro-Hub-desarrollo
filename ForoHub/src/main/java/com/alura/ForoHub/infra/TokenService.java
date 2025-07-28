@@ -22,7 +22,7 @@ public class TokenService {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
             return JWT.create()
-                    .withIssuer("API Foro Hub")
+                    .withIssuer("API ForoHub")
                     .withSubject(usuario.getUsername())
                     .withExpiresAt(fechaExpiracion())
                     .sign(algoritmo);
@@ -39,12 +39,12 @@ public class TokenService {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
             return JWT.require(algoritmo)
-                    .withIssuer("API Foro Hub")
+                    .withIssuer("API ForoHub")
                     .build()
                     .verify(tokenJWT)
                     .getSubject();
         } catch (JWTVerificationException exception){
-            throw new RuntimeException("Token JWT inválido o expirado");
+            throw new RuntimeException("Token JWT inválido o expirado: " + exception.getMessage());
         }
     }
 }

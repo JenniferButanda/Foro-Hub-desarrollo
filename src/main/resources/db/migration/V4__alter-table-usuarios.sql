@@ -1,0 +1,1 @@
+ALTER TABLE usuarios CHANGE nombreUsuario username VARCHAR(255);

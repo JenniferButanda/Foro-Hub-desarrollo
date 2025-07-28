@@ -1,0 +1,1 @@
+ALTER TABLE topicos CHANGE autor_id usuario_id BIGINT;

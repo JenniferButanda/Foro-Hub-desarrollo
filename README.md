@@ -83,15 +83,18 @@ Spring Boot, JPA y autenticación segura con JWT.
   }
 ```
 
+
 - Listar tópicos
 
   GET /topicos
   Authorization: Bearer {token}
+  
 
 - Detallar topico
   
   GET /topicos/id_del_topico_a_consultar
   Authorization: Bearer {token}
+
 
 - Actualizar topico
 
@@ -106,11 +109,13 @@ Spring Boot, JPA y autenticación segura con JWT.
 	"curso": "Backend Alura"
   }
   ```
+
   
--Eliminar tópico
+- Eliminar tópico
 
   DELETE /topicos/id_del_topico_a_eliminar
   Authorization: Bearer {token}
+
 
 
 ![Demostración del programa](ForoHub_demo.gif)
